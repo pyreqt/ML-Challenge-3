@@ -1,8 +1,4 @@
 
-# This script will  help you get started with building stacked models in R.
-# Although, there are libraries like caret, H2o where stacking happens automatically and many of us never know what happens at back.
-# This script will help you understand how stacking happens and will provide your more control of the process.
-
 # This script builds 5 XGB Models in L1 and finally a Logistic Regression model on top of them.
 
 path <- "add path"
@@ -214,8 +210,6 @@ summary(lr_model)
 
 preds <- predict(lr_model, oof_test, type = 'response')
 
-submit <- data.table(ID = oof_test$ID, click = preds)
-fwrite(submit, "stacked_lgr.csv")
 
 
 # What can you do next ? 
